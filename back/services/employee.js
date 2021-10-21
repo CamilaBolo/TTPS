@@ -1,4 +1,5 @@
 const Employee = require("../models/Employee");
+const ErrException = require("./ErrException");
 
 const readEmployee = async (id) => {
   const employee = await Employee.findById(id);

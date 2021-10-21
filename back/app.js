@@ -5,9 +5,11 @@ const app = express();
 app.use(express.json());
 const PORT = 3001;
 
-const empleoyees = require("./routes/Employee");
+const employees = require("./routes/Employee");
+const admins = require("./routes/Admin");
 
-app.use("/employees", empleoyees);
+app.use("/employees", employees);
+app.use("/admins", admins);
 
 mongoose.connect("mongodb://localhost:27017/ttps", {
   useNewUrlParser: "true",
