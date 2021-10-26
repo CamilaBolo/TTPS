@@ -4,7 +4,7 @@ import Header from "../components/General/Header"
 const Home = ()=>{
     return <Background>
         <Header></Header>
-        <h1>HELLO WORLD!</h1>
+        <h1>WELCOMEEEEEE!</h1>
         </Background>
 }
 

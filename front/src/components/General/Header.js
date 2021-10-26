@@ -1,4 +1,5 @@
 import RightItems from "../Header/RightItems";
+import LeftItems from "../Header/LeftItems";
 import useStyles from "./headerStyles";
 
 const Header = () => {
@@ -6,6 +7,7 @@ const Header = () => {
   return (
     <div className={classes.header}>
       <RightItems />
+      <LeftItems />
     </div>
   );
 };
