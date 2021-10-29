@@ -11,9 +11,11 @@ const PORT = 3001;
 app.use(cors());
 const employees = require("./routes/Employee");
 const admins = require("./routes/Admin");
+const pacientes = require("./routes/Paciente");
 
 app.use("/employees", employees);
 app.use("/admins", admins);
+app.use("/pacientes", pacientes);
 
 mongoose.connect("mongodb://localhost:27017/ttps", {
   useNewUrlParser: "true",
