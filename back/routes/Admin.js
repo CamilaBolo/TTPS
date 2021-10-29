@@ -6,5 +6,5 @@ const {
 
 const router = express.Router({ mergeParams: true });
 
-router.route("/").get(findAdmin);
+router.route("/").post(findAdmin);
 module.exports = router; 

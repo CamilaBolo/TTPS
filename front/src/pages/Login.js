@@ -19,15 +19,16 @@ const Login = () => {
         <TextField 
             name={"Username"}
             stateName="username"
-            setValue={setFormState}
+            // setValue={setFormState}
+            onChange={e => setFormState({ ...formState, username: e.target.value })}
             placeholder={`Username`}
             variant="filled"/>
         <TextField 
             type="password"
             name={"Password"}
             stateName="password"
-            value={formState.pasword}
-            setValue={setFormState}
+            // setValue={setFormState}
+            onChange={e => setFormState({ ...formState, password: e.target.value })}
             placeholder={`Password`}
             variant="filled"/>
         <Button key="5" type="submit" value="Login" color={"primary"}>

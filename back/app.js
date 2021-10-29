@@ -5,9 +5,10 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(express.json());
 const PORT = 3001;
-const ALLOWED_ORIGINS = "https://studio.apollographql.com, http://localhost:3000";
+// const ALLOWED_ORIGINS = "https://studio.apollographql.com, http://localhost:3000, http://localhost:3001/admins/";
 
-app.use(cors({ credentials: true, origin: ALLOWED_ORIGINS }));
+// app.use(cors({ credentials: true, origin: ALLOWED_ORIGINS }));dsadasdasdasdaasasas
+app.use(cors());
 const employees = require("./routes/Employee");
 const admins = require("./routes/Admin");
 
