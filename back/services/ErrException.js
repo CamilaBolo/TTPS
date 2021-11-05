@@ -1,7 +1,9 @@
-class ErrException extends Error {
-    constructor(status, message) {
-      super(message);
-      this.status = status;
-    }
-  }
-  module.exports = ErrException;
+class ErrException extends Error
+{
+	constructor(status, message)
+	{
+		super(message);
+		this.status = status;
+	}
+}
+module.exports = ErrException;

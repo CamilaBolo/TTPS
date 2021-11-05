@@ -1,10 +1,10 @@
 const express = require("express");
 
 const {
-    findAdmin
+	findAdmin
 } = require("../controllers/Admin");
 
-const router = express.Router({ mergeParams: true });
+const router = express.Router({mergeParams: true});
 
 router.route("/").post(findAdmin);
-module.exports = router; 
+module.exports = router;

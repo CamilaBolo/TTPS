@@ -1,32 +1,26 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-
-const app = express();
-app.use(express.json());
-const PORT = 3001;
-// const ALLOWED_ORIGINS = "https://studio.apollographql.com, http://localhost:3000, http://localhost:3001/admins/";
-
-// app.use(cors({ credentials: true, origin: ALLOWED_ORIGINS }));dsadasdasdasdaasasas
-app.use(cors());
 const employees = require("./routes/Employee");
 const admins = require("./routes/Admin");
 const pacientes = require("./routes/Paciente");
+require("dotenv").config();
 
+const app = express();
+
+app.use(express.json());
+app.use(cors());
 app.use("/employees", employees);
 app.use("/admins", admins);
 app.use("/pacientes", pacientes);
 
-mongoose.connect("mongodb://localhost:27017/ttps", {
-  useNewUrlParser: "true",
-});
-mongoose.connection.on("error", (err) => {
-  console.log("err", err);
-});
-mongoose.connection.on("connected", (err, res) => {
-  console.log("mongoose is connected");
-});
+mongoose.connect(`mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.gzdmt.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`, {
+	useNewUrlParser: "true",
+})
+	.then(() => console.log("Mongoose is connected"))
+	.catch(e => console.log(e));
 
-app.listen(PORT, () => {
-  console.log(`app is listening to PORT ${PORT}`);
+app.listen(process.env.PORT, () =>
+{
+	console.log(`app is listening to PORT ${process.env.PORT}`);
 });
