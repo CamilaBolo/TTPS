@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const users = require("./routes/User");
 const pacientes = require("./routes/Paciente");
+const estudios = require("./routes/Estudio");
 require("dotenv").config();
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/users", users);
 app.use("/pacientes", pacientes);
+app.use("/estudios", estudios);
 
 mongoose.connect(`mongodb+srv://${process.env.DBUSER}:${process.env.DBPASS}@cluster0.gzdmt.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`, {
 	useNewUrlParser: "true",

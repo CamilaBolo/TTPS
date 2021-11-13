@@ -1,8 +1,18 @@
 const Mongoose = require("mongoose");
 
+const Muestra = new Mongoose.Schema({
+    cantidad: String,
+    numero	: Number,
+});
+
+const Log = new Mongoose.Schema({
+	fecha_modificacion: Date ,
+	estado: String
+});
+
 const Estudio = new Mongoose.Schema({
-	id_paciente: {
-		type: String, 
+	paciente: {
+		type: Mongoose.Schema.Types.ObjectId, ref: 'Paciente',
 		required: true
 	},
 	medico_derivante: {
@@ -23,10 +33,7 @@ const Estudio = new Mongoose.Schema({
 	turno: {
 		type: String
 	},
-	muestra: {
-		cantidad: { type: Number },
-		numero:   { type: Number }
-	},
+	muestra: Muestra,
 	estado: {
 		type: Number,
 		required: true
@@ -37,10 +44,7 @@ const Estudio = new Mongoose.Schema({
 	fecha_alta: {
 		type: Date
 	},
-	historial_cambios: [
-		{
-			fecha_modificacion: { type: Date },
-			estado: String
-		}		
-	],
+	historial_cambios: [Log],
 });
+
+module.exports = Mongoose.model("Estudio", Estudio);
