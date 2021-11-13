@@ -6,11 +6,14 @@ import {routes} from "../../constants/routes";
 const HomeButtons = () =>
 {
 	const history = useHistory();
+
 	const redirectToLogin = () =>
 	{
 		const path = generatePath(routes.LOGIN);
+
 		history.push(path);
 	};
+
 	return (
 		<Button variant="contained" onClick={redirectToLogin}>Contained</Button>
 	);
