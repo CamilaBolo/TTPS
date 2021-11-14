@@ -3,6 +3,7 @@ import {Route, Switch, Redirect} from "react-router-dom";
 import {routes} from './constants/routes';
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Estudios from './pages/Estudios';
 
 function App()
 {
@@ -18,6 +19,9 @@ function App()
 					</Route>
 					<Route path={routes.LOGIN}>
 						<Login />
+					</Route>
+					<Route path={routes.ESTUDIOS}>
+						<Estudios />
 					</Route>
 				</Route>
 			</Switch>

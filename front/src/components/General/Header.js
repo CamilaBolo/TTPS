@@ -6,9 +6,9 @@ const Header = () =>
 {
 	const classes = useStyles();
 	return (
-		<div className={classes.header}>
-			<RightItems />
+		<div id="Header" className={classes.header}>
 			<LeftItems />
+			<RightItems />
 		</div>
 	);
 };

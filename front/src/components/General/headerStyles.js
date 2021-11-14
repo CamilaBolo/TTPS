@@ -16,7 +16,8 @@ const useStyles = makeStyles({
 	right: {
 		display: "flex",
 		flex: "1",
-		flexDirection: "row-reverse",
+		flexDirection: "row",
+		justifyContent: "flex-end",
 		alignItems: "center",
 		margin: "2%",
 	}

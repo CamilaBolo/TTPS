@@ -1,6 +1,18 @@
 const Estudio = require("../models/Estudio");
 const ErrException = require("./ErrException");
 
+const getEstudios = async () =>
+{
+	const estudios = await Estudio.find()
+        .populate('paciente', 'name -_id');;
+	if (!estudios)
+	{
+		throw new ErrException(404, "error! Estudio not found");
+	}
+	return estudios;
+};
+
+
 const readEstudio = async (id) =>
 {
 	const estudio = await Estudio.findById(id)
@@ -67,4 +79,5 @@ module.exports = {
 	createEstudio,
 	deleteEstudio,
 	updateEstudio,
+	getEstudios,
 };

@@ -4,7 +4,7 @@ const LeftItems = () =>
 {
 	return (
 		<div>
-			<h1>Holaaaa!</h1>
+			<h1>Laboratorio</h1>
 		</div>
 	);
 };

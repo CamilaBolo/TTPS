@@ -2,11 +2,13 @@ import {useEffect, useState} from "react";
 import {useRouteMatch} from "react-router";
 import {routes} from "../../constants/routes";
 import HomeButtons from "./HomeButtons";
+import useStyles from "../General/headerStyles";
 
 const mapPagetoIcons = () =>
 {
 	return {
 		[routes.HOME]: () => <HomeButtons />,
+		// [routes.LOGIN]: () => <HomeButtons />,
 	};
 };
 
@@ -20,7 +22,8 @@ const RightItems = () =>
 		setRightItems(mapPagetoIcons()[path]);
 	}, [path]);
 
-	return <div >{rightItems}</div>;
+	const classes = useStyles();
+	return <div className={classes.right}>{rightItems}</div>;
 };
 
 export default RightItems;

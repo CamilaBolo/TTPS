@@ -1,5 +1,18 @@
 const estudioService = require("../services/estudio");
 
+exports.getEstudios = async (req, res) =>
+{
+	try
+	{
+		const estudios = await estudioService.getEstudios();
+		res.status(200).json(estudios);
+	}
+	catch (err)
+	{
+		res.status(err.status || 500).json({reason: err.message});
+	}
+};
+
 exports.readEstudio = async (req, res) =>
 {
 	try

@@ -14,8 +14,26 @@ const HomeButtons = () =>
 		history.push(path);
 	};
 
+	const redirectToPacientes = () =>
+	{
+		const path = generatePath(routes.PACIENTES);
+
+		history.push(path);
+	};
+
+	const redirectToEstudios = () =>
+	{
+		const path = generatePath(routes.ESTUDIOS);
+
+		history.push(path);
+	};
+
 	return (
-		<Button variant="contained" onClick={redirectToLogin}>Contained</Button>
+		<>
+			<Button onClick={redirectToPacientes}>Pacientes</Button>
+			<Button onClick={redirectToEstudios}>Estudios</Button>
+			<Button variant="contained" onClick={redirectToLogin}>Log In</Button>
+		</>
 	);
 };
 

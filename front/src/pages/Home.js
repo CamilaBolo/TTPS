@@ -5,7 +5,7 @@ const Home = () =>
 {
 	return <Background>
 		<Header></Header>
-		<h1>WELCOMEEEEEE!</h1>
+		<h1>Pagina de inicio de la aplicacion</h1>
 	</Background>;
 };
 
