@@ -1,5 +1,10 @@
 const Mongoose = require("mongoose");
 
+const ObraSocial = new Mongoose.Schema({
+    nombre		: String,
+    nro_afiliado: Number,
+});
+
 const Muestra = new Mongoose.Schema({
     cantidad: String,
     numero	: Number,
@@ -23,9 +28,15 @@ const Estudio = new Mongoose.Schema({
 		type: String,
 		required: true
 	},
+	detalle_diagnostico: {
+		type: String,
+		// required: true
+	},
+	obra_social: ObraSocial,
 	tipo: {
 		type: Number,
-		required: true
+		// required: true,
+		default: 0
 	},
 	presupuesto: {
 		type: Number

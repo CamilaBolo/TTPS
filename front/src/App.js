@@ -4,6 +4,7 @@ import {routes} from './constants/routes';
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Estudios from './pages/Estudios';
+import AltaEstudio from './pages/AltaEstudio';
 
 function App()
 {
@@ -22,6 +23,9 @@ function App()
 					</Route>
 					<Route path={routes.ESTUDIOS}>
 						<Estudios />
+					</Route>
+					<Route path={routes.ALTAESTUDIO}>
+						<AltaEstudio />
 					</Route>
 				</Route>
 			</Switch>

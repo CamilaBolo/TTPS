@@ -32,7 +32,7 @@ const Login = () =>
 				variant="filled"
 				autoComplete="off"
 				required />
-			<Button key="5" type="submit" value="Login" color={"primary"}>
+			<Button variant="outlined" key="5" type="submit" value="Login" color={"primary"}>
 				LogIn
 			</Button>
 		</form>
