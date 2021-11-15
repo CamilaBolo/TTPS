@@ -3,6 +3,8 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 export const post = (path, body) =>
 {
+	// console.log(BACKEND_URL + path);
+	// console.log(JSON.stringify(body));
 	return fetch(BACKEND_URL + path, {
 		method: "POST",
 		body: JSON.stringify(body),

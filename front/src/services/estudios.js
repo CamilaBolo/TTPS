@@ -16,7 +16,7 @@ export const getEstudios = async () =>
 
 export const postEstudio = async (body) =>
 {
-    const response = await post(`/estudios/`, body);
+    const response = await post(`estudios/`, body);
 
     return response.json();
 };

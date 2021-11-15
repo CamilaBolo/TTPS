@@ -9,8 +9,6 @@ import {useHistory} from "react-router-dom";
 import {generatePath} from "react-router";
 import {routes} from "../constants/routes";
 
-
-
 const Estudios = () =>
 {
     const history = useHistory();
@@ -39,7 +37,7 @@ const Estudios = () =>
         },
         {
             title: "Medico Derivante",
-            field: "medico_derivante"
+            field: "medico_derivante.nombre"
         },
         {
             title: "Diagnostico Presuntivo",
@@ -68,11 +66,6 @@ const Estudios = () =>
                         tooltip: 'Ver Detalle',
                         onClick: (event, rowData)=> alert("Detalle")
                     },
-                    // {
-                    //     icon: 'delete',
-                    //     tooltip: 'Eliminar Estudio',
-                    //     onClick: (event, rowData)=> window.confirm('Eliminar '+ rowData.paciente.name + ' - ' + rowData.tipo + ' ?')
-                    // }
                 ]}
                 options={{
                     actionsColumnIndex: -1

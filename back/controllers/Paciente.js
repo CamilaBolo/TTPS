@@ -1,5 +1,18 @@
 const pacienteService = require("../services/paciente");
 
+exports.getPacientes = async (req, res) =>
+{
+	try
+	{
+		const pacientes = await pacienteService.getPacientes();
+		res.status(200).json(pacientes);
+	}
+	catch (err)
+	{
+		res.status(err.status || 500).json({reason: err.message});
+	}
+};
+
 exports.readPaciente = async (req, res) =>
 {
 	try

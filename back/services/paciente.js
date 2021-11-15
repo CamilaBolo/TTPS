@@ -1,6 +1,21 @@
 const Paciente = require("../models/Paciente");
 const ErrException = require("./ErrException");
 
+const getPacientes = async () =>
+{
+	const pacientes = await Paciente.find()
+	if (!pacientes)
+	{
+		throw new ErrException(404, "error! Pacientes not found");
+	}
+
+	const result = pacientes.map(({_id, name}) => ({
+		_id, name
+	}));
+
+	return result;
+};
+
 const readPaciente = async (id) =>
 {
 	const paciente = await Paciente.findById(id);
@@ -62,6 +77,7 @@ const updatePaciente = async (id, pacienteBody) =>
 };
 
 module.exports = {
+	getPacientes,
 	readPaciente,
 	createPaciente,
 	deletePaciente,

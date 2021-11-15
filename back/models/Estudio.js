@@ -1,5 +1,12 @@
 const Mongoose = require("mongoose");
 
+const MedicoDerivante = new Mongoose.Schema({
+	mail:String,
+    telefono: String,
+    nombre: String,
+    matricula: String
+})
+
 const ObraSocial = new Mongoose.Schema({
     nombre		: String,
     nro_afiliado: Number,
@@ -21,7 +28,7 @@ const Estudio = new Mongoose.Schema({
 		required: true
 	},
 	medico_derivante: {
-		type: String,
+		type: MedicoDerivante,
 		required: true
 	},
 	diagnostico_presuntivo: {
@@ -47,7 +54,8 @@ const Estudio = new Mongoose.Schema({
 	muestra: Muestra,
 	estado: {
 		type: Number,
-		required: true
+		// required: true
+		default: 0
 	},
 	empleado: {
 		type: String
